@@ -1,0 +1,31 @@
+.header {
+  background-color: #2e7d32;
+  padding: 10px 30px;
+}
+
+.location-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.location-input input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  width: 200px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
