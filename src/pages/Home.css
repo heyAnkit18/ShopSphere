@@ -1,0 +1,70 @@
+.banner {
+  position: relative;
+}
+
+.banner-image {
+  width: 100%;
+  height: 85vh;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.promo-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.promo-card {
+  flex: 1;
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.promo-image {
+  width: 100%;
+  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.promo-card h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #2e7d32;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .promo-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .banner-image {
+    height: 60vh;
+  }
+}

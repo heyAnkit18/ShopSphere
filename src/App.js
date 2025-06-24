@@ -2,15 +2,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// ✅ Ensure this file exists: src/context/CartContext.jsx
+// Context provider
 import { CartProvider } from './context/CartContext';
 
-// ✅ Ensure these files exist and are correctly named:
+// Components and pages
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+
+// New page for filtered category products
+import FilteredProducts from './pages/FilteredProducts';
 
 import './App.css';
 
@@ -23,6 +26,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/category/:category" element={<FilteredProducts />} /> {/* NEW */}
         </Routes>
         <Footer />
       </Router>
@@ -31,3 +35,4 @@ const App = () => {
 };
 
 export default App;
+
