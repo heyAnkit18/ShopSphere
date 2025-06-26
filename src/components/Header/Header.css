@@ -1,15 +1,13 @@
-/* Header.css */
-
 :root {
-  --primary-yellow: #fbbf24;    /* Bright Yellow */
-  --primary-yellow-dark: #b45309; /* Dark Yellow / Gold */
-  --primary-green: #16a34a;     /* Vibrant Green */
-  --primary-green-dark: #15803d; /* Dark Green */
-  --bg-color: #ffffff;          /* White background */
-  --text-color: #134e4a;        /* Dark teal-ish for text */
-  --text-muted: #4b5563;        /* Gray for secondary text */
+  --primary-yellow: #fbbf24;    
+  --primary-yellow-dark: #b45309; 
+  --primary-green: #16a34a;     
+  --primary-green-dark: #15803d; 
+  --bg-color: #ffffff;          
+  --text-color: #134e4a;        
+  --text-muted: #4b5563;        
   --shadow-yellow: rgba(251, 191, 36, 0.3);
-  --border-color: #fde68a;      /* Light yellow border */
+  --border-color: #fde68a;      
   --hover-yellow: #b45309;
   --hover-green: #166534;
 }

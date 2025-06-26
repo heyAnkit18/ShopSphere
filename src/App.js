@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 
+
 // New page for filtered category products
 import FilteredProducts from './pages/FilteredProducts';
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/category/:category" element={<FilteredProducts />} /> {/* NEW */}
+           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </Router>

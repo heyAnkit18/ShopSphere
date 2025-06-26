@@ -2,27 +2,30 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { CartContext } from '../context/CartContext';
+// import './FilteredProducts.css'; // optional for styles
 
 const FilteredProducts = () => {
   const { category } = useParams();
-  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(data => {
-        const filtered = data.filter(product => product.category === category);
-        setProducts(filtered);
-      });
+    const allProducts = JSON.parse(localStorage.getItem('allProducts')) || [];
+    const categoryDecoded = decodeURIComponent(category);
+
+    const filtered = allProducts.filter(
+      product => product.category.toLowerCase() === categoryDecoded.toLowerCase()
+    );
+
+    setFilteredProducts(filtered);
   }, [category]);
 
   return (
     <div className="main">
-      <h2>Category: {category}</h2>
+      <h2 className="category-heading">Category: {decodeURIComponent(category)}</h2>
       <div className="product-grid">
-        {products.length > 0 ? (
-          products.map(product => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map(product => (
             <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
           ))
         ) : (
@@ -34,3 +37,4 @@ const FilteredProducts = () => {
 };
 
 export default FilteredProducts;
+
