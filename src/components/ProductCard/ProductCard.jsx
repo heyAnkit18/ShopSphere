@@ -20,7 +20,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         alt={product.title}
         className="product-image"
       />
-      <div className="delivery-time">🕒 11 MINS</div>
+      <div className="delivery-time">🕒 12 MINS</div>
       <h3 className="product-title">{product.title}</h3>
       <p className="product-weight">{product.weight || '100 g'}</p>
       <div className="product-price">

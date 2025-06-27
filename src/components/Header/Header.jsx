@@ -38,7 +38,7 @@ const Header = () => {
 
         {/* Login + Cart */}
         <div className="header-right">
-          <button className="login-btn" onClick={() => setShowLogin(true)}>🔑 Login</button>
+          <button className="login-btn" onClick={() => setShowLogin(true)}> Login</button>
           <Link to="/cart" className="cart">
             <span className="cart-icon">🛒</span>
             <div className="cart-info">
