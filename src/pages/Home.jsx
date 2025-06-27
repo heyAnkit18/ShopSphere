@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { CartContext } from '../context/CartContext';
 import bannerVideo from '../assets/banner.mp4';
-import promo1 from '../assets/promo1.jpg';
-import promo2 from '../assets/promo2.jpg';
-import promo3 from '../assets/promo3.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -50,19 +47,31 @@ const Home = () => {
     <div className="main">
       <div className="banner">
         <video src={bannerVideo} className="banner-video" autoPlay muted loop playsInline />
-      </div>
-
-      <div className="promo-section">
-        {[{ img: promo1, label: 'Home Decor' }, { img: promo2, label: 'Electronics' }, { img: promo3, label: 'Skincare' }].map((promo, i) => (
-          <div
-            key={i}
-            className="promo-card"
-            onClick={() => handlePromoClick(categoryMap[promo.label])}
-          >
-            <img src={promo.img} alt={promo.label} className="promo-image" />
-            <h4>{promo.label}</h4>
+        <div className="banner-overlay">
+          <div className="banner-content">
+            <div className="banner-text">
+              <h1>ShopSphere</h1>
+              <p>Your One-Stop Destination for Everyday Needs</p>
+              <p className="sub-heading">Trusted by Millions. Delivered to Your Doorstep.</p>
+            </div>
+            <div className="banner-cards">
+              {[
+                { label: 'Clothes 👗', category: 'womens-dresses' },
+                { label: 'Mens Accessories ⌚', category: 'mens-watches' },
+                { label: 'Smartphones 📱', category: 'smartphones' },
+                { label: 'Home Decor 🛋️', category: 'home-decoration' },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="banner-card"
+                  onClick={() => handlePromoClick(item.category)}
+                >
+                  {item.label}
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+        </div>
       </div>
 
       {Object.entries(categoryMap).map(([heading, apiCategory], index) => {
@@ -89,6 +98,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 
