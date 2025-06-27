@@ -26,7 +26,6 @@ const LoginModal = ({ onClose }) => {
     <div className="modal-overlay">
       <div className="login-modal">
         <button className="back-btn" onClick={onClose}>←</button>
-        <img src="/logo192.png" alt="Logo" className="logo" />
         <h2>India's last minute app</h2>
         <p>Log in or Sign up</p>
 
