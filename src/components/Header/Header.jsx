@@ -1,5 +1,6 @@
+// src/components/Header/Header.js
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import LoginModal from '../LoginModal/LoginModal';
 import './Header.css';
@@ -7,15 +8,22 @@ import logo from '../../assets/logo.png';
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
   const { cartItems } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const totalPrice = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0);
 
+  const handleSearch = () => {
+    if (searchInput.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchInput.trim())}`);
+    }
+  };
+
   return (
     <>
       <header className="header">
-        {/* Logo + Location */}
         <div className="header-left">
           <Link to="/" className="logo-container">
             <img src={logo} alt="ShopSphere" className="logo" />
@@ -26,19 +34,20 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Search */}
         <div className="header-center">
           <input
             type="text"
-            placeholder='Search for "shoes", "dress", "decor", etc.'
+            placeholder='Search for - iphone, dress,laptop...etc.'
             className="search-input"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           />
-          <button className="search-btn">🔍</button>
+          <button className="search-btn" onClick={handleSearch}>🔍</button>
         </div>
 
-        {/* Login + Cart */}
         <div className="header-right">
-          <button className="login-btn" onClick={() => setShowLogin(true)}> Login</button>
+          <button className="login-btn" onClick={() => setShowLogin(true)}>Login</button>
           <Link to="/cart" className="cart">
             <span className="cart-icon">🛒</span>
             <div className="cart-info">
@@ -49,7 +58,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Modal */}
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
     </>
   );

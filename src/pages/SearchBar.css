@@ -1,0 +1,31 @@
+/* File: src/pages/SearchBar.css */
+
+.searchbar-page {
+  padding: 30px 5%;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.search-heading {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.query-text {
+  color: #00c853;
+}
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.no-results {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+}

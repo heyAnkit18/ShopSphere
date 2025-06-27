@@ -11,10 +11,8 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
-
-
-// New page for filtered category products
 import FilteredProducts from './pages/FilteredProducts';
+import SearchBar from './pages/SearchBar'; // ✅ Add SearchBar
 
 import './App.css';
 
@@ -27,8 +25,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/category/:category" element={<FilteredProducts />} /> {/* NEW */}
-           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/category/:category" element={<FilteredProducts />} />
+          <Route path="/search" element={<SearchBar />} /> {/* ✅ New route for search */}
         </Routes>
         <Footer />
       </Router>
@@ -37,4 +35,5 @@ const App = () => {
 };
 
 export default App;
+
 
