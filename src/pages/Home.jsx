@@ -56,8 +56,8 @@ const Home = () => {
             </div>
             <div className="banner-cards">
               {[
-                { label: 'Clothes 👗', category: 'womens-dresses' },
-                { label: 'Mens Accessories ⌚', category: 'mens-watches' },
+                { label: 'Womens-dresses 👗', category: 'womens-dresses' },
+                { label: 'Mens-watches ⌚', category: 'mens-watches' },
                 { label: 'Smartphones 📱', category: 'smartphones' },
                 { label: 'Home Decor 🛋️', category: 'home-decoration' },
               ].map((item, idx) => (

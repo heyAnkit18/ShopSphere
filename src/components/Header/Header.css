@@ -121,24 +121,7 @@
   gap: 24px;
 }
 
-.login-btn {
-  background: transparent;
-  border: 2px solid #3b82f6; /* blue-500 */
-  padding: 10px 22px;
-  border-radius: 30px;
-  color: #3b82f6;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-}
-
-.login-btn:hover {
-  background: #3b82f6;
-  color: white;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
-}
+/* Removed login-btn styles here */
 
 .cart {
   display: flex;
@@ -183,6 +166,3 @@
   opacity: 0.85;
   font-weight: 500;
 }
-
-
-

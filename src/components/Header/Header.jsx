@@ -2,12 +2,10 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import LoginModal from '../LoginModal/LoginModal';
 import './Header.css';
 import logo from '../../assets/logo.png';
 
 const Header = () => {
-  const [showLogin, setShowLogin] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
@@ -37,7 +35,7 @@ const Header = () => {
         <div className="header-center">
           <input
             type="text"
-            placeholder='Search for - iphone, dress,laptop...etc.'
+            placeholder='Search for - iphone, dress, laptop...etc.'
             className="search-input"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
@@ -47,7 +45,6 @@ const Header = () => {
         </div>
 
         <div className="header-right">
-          <button className="login-btn" onClick={() => setShowLogin(true)}>Login</button>
           <Link to="/cart" className="cart">
             <span className="cart-icon">🛒</span>
             <div className="cart-info">
@@ -57,8 +54,6 @@ const Header = () => {
           </Link>
         </div>
       </header>
-
-      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
     </>
   );
 };
