@@ -30,3 +30,37 @@
   color: #888;
   margin-top: 60px;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
+  .no-products {
+    margin-top: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtered-products-container {
+    padding: 0 12px;
+  }
+  .category-heading {
+    font-size: 1.3rem;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .no-products {
+    margin-top: 30px;
+    font-size: 0.95rem;
+  }
+}
+
