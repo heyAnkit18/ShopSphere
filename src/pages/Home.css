@@ -90,7 +90,7 @@
   color: #000;
 }
 
-/* Promo Section (if still used elsewhere) */
+/* Promo Section */
 .promo-section {
   display: flex;
   gap: 20px;
@@ -144,5 +144,84 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
 }
+
+/* -------- Responsive -------- */
+@media (max-width: 1024px) {
+  .banner-video {
+    max-height: 280px;
+  }
+  .banner-text h1 {
+    font-size: 42px;
+  }
+  .banner-text p {
+    font-size: 18px;
+  }
+  .banner-text .sub-heading {
+    font-size: 14px;
+  }
+  .promo-card {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin-bottom: 30px;
+  }
+  .banner-overlay {
+    padding: 40px 16px;
+  }
+  .banner-text h1 {
+    font-size: 32px;
+  }
+  .banner-text p {
+    font-size: 16px;
+  }
+  .banner-cards {
+    gap: 14px;
+  }
+  .banner-card {
+    font-size: 14px;
+    min-width: 120px;
+    padding: 12px 18px;
+  }
+  .promo-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .promo-card {
+    max-width: 100%;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-overlay {
+    padding: 30px 12px;
+  }
+  .banner-text h1 {
+    font-size: 24px;
+  }
+  .banner-text p,
+  .banner-text .sub-heading {
+    font-size: 14px;
+  }
+  .banner-cards {
+    gap: 10px;
+  }
+  .banner-card {
+    font-size: 13px;
+    min-width: 100px;
+    padding: 10px 14px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+}
+
 
 
