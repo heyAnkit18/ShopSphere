@@ -1,11 +1,10 @@
-/* ProductCard.css */
+/* Product Card Base */
 .product-card {
   position: relative;
   background: #fff;
   border-radius: 18px;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.08),
-    0 12px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),
+              0 12px 24px rgba(0, 0, 0, 0.12);
   padding: 18px 16px;
   width: 190px;
   text-align: left;
@@ -16,14 +15,13 @@
   cursor: pointer;
   will-change: transform;
 }
-
 .product-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow:
-    0 12px 18px rgba(0, 0, 0, 0.14),
-    0 20px 38px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.14),
+              0 20px 38px rgba(0, 0, 0, 0.18);
 }
 
+/* Offer Badge */
 .offer-badge {
   position: absolute;
   top: 12px;
@@ -41,6 +39,7 @@
   text-transform: uppercase;
 }
 
+/* Image */
 .product-image {
   width: 100%;
   height: 140px;
@@ -51,11 +50,11 @@
   box-shadow: inset 0 0 8px rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
 }
-
 .product-card:hover .product-image {
   transform: scale(1.05);
 }
 
+/* Text Elements */
 .delivery-time {
   font-size: 13px;
   color: #27ae60;
@@ -63,7 +62,6 @@
   margin-bottom: 8px;
   user-select: none;
 }
-
 .product-title {
   font-size: 15px;
   font-weight: 700;
@@ -75,14 +73,12 @@
   line-height: 1.2;
   letter-spacing: 0.2px;
 }
-
 .product-weight {
   font-size: 13px;
-  color: #6b7280; /* cool gray */
+  color: #6b7280;
   margin-bottom: 10px;
   font-weight: 500;
 }
-
 .product-price {
   font-size: 18px;
   font-weight: 800;
@@ -90,7 +86,6 @@
   margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
-
 .old-price {
   text-decoration: line-through;
   color: #9ca3af;
@@ -99,6 +94,7 @@
   font-weight: 600;
 }
 
+/* Button */
 .add-btn {
   background: linear-gradient(135deg, #27ae60, #219150);
   color: #fff;
@@ -113,8 +109,52 @@
   transition: background 0.25s ease, box-shadow 0.25s ease;
   user-select: none;
 }
-
 .add-btn:hover {
   background: linear-gradient(135deg, #1e874a, #176b3d);
   box-shadow: 0 6px 18px rgba(23, 107, 61, 0.7);
 }
+
+/* ---------------------- */
+/* ✅ Responsive Styles */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .product-card {
+    width: 47%;
+    padding: 14px 12px;
+    margin: 8px auto;
+  }
+  .product-title {
+    font-size: 14px;
+    height: auto;
+  }
+  .product-price {
+    font-size: 16px;
+  }
+  .old-price {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+    padding: 12px;
+  }
+  .product-image {
+    height: 120px;
+  }
+  .delivery-time, .product-weight {
+    font-size: 12px;
+  }
+  .product-title {
+    font-size: 13.5px;
+  }
+  .product-price {
+    font-size: 15px;
+  }
+  .add-btn {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
